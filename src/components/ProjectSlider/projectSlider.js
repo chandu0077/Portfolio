@@ -1,10 +1,9 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-// import { useNavigate } from "react-dom";
 
 import { useRef } from "react";
-const ProjectSlider = () => {
+const ProjectSlider = ({ globalColor }) => {
   const projects = [
     {
       title: "HotStar-Clone",
@@ -22,19 +21,24 @@ const ProjectSlider = () => {
       link: "https://chandu0077.github.io/whatsapp/",
     },
     {
-      title: "Pizza Restaurant",
-      backgroundImg: "/img/Pizza-template.png",
-      link: "https://chandu0077.github.io/Pizza-Restaurant-Template/",
+      title: "Book Store",
+      backgroundImg: "/img/book-locator.png",
+      link: "https://book-store-indol-one.vercel.app/",
     },
     {
-      title: "Music Band",
-      backgroundImg: "/img/band.png",
-      link: "https://chandu0077.github.io/band/",
+      title: "Food Order",
+      backgroundImg: "/img/Food-Order.png",
+      link: "https://food-order-ecru-seven.vercel.app/",
     },
     {
       title: "Quote Generator",
       backgroundImg: "/img/quote.png",
       link: "https://chandu0077.github.io/quote-generator/",
+    },
+    {
+      title: "Online Shop Store",
+      backgroundImg: "/img/shop-store.png",
+      link: "https://flow-launch-blue.vercel.app/",
     },
   ];
 
@@ -56,7 +60,6 @@ const ProjectSlider = () => {
     ],
   };
   const sliderRef = useRef();
-  //   const navigate = useNavigate();
   function projectClickHandler(l) {
     window.open(l);
   }
@@ -80,8 +83,13 @@ const ProjectSlider = () => {
                 }}
               >
                 <a href={project.link} target="__blank"></a>
-                <div className="absolute w-full bottom-0 left-0 p-5 bg-zinc-400 opacity-80 text-white h-14 lg:h-auto">
-                  <h2 className="text-white text-md xl:text-2xl">
+                <div className="[&:not(:first-child)]:opacity-100 absolute w-full bottom-0 left-0 p-3 bg-slate-500 text-white h-14 lg:h-auto">
+                  <h2
+                    className="text-[#70ff00] text-md xl:text-2xl opacity-100"
+                    style={{
+                      color: `oklch(0.75 0.14 ${globalColor})`,
+                    }}
+                  >
                     {project.title}
                   </h2>
                 </div>

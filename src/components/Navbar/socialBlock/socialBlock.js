@@ -1,4 +1,4 @@
-const Socialblock = ({ type }) => {
+const Socialblock = ({ type, color }) => {
   let icon, text, link;
   if (type === "linkedin") {
     icon = "fa fa-linkedin";
@@ -16,20 +16,23 @@ const Socialblock = ({ type }) => {
 
   return (
     <div
-      class={
+      className={
         type === "contact"
-          ? "border-double border-green-300 border-2 px-3 py-1 rounded-lg"
-          : "border-collapse mt-1"
+          ? "border-double border-[#70ff00] border-2 px-3 py-1 rounded-lg"
+          : "border-collapse"
       }
+      style={{
+        borderColor: `oklch(0.75 0.14 ${color})`,
+      }}
     >
-      <i class={`${icon} text-white mr-2`}></i>
       <button type="button" class="text-white font-medium">
         <a
           href={link}
           target="__blank"
-          class={type === "contact" ? "text-xs" : "text-lg"}
+          className={type === "contact" ? "text-xs" : "text-lg"}
         >
-          {text}
+          {type === "contact" ? text : null}{" "}
+          <i className={`${icon} text-white mr-2`}></i>
         </a>
       </button>
     </div>

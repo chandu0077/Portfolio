@@ -15,3 +15,15 @@ body {
   margin: 0;
   background-color: #131313;
 }
+.color-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.color-picker {
+  position: absolute;
+  z-index: 1000;
+}

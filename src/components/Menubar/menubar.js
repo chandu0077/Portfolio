@@ -6,7 +6,6 @@ const Menubar = () => {
   const [menuOpened, setMenuOpened] = useState(false);
 
   const toggleMenu = () => {
-    console.log("hello", menuOpened);
     setMenuOpened((prevState) => !prevState);
   };
 
